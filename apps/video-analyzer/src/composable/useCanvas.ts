@@ -3,6 +3,8 @@ export default function useCanvas() {
     console.log('initCanvas');
   };
 
+ 
+
   return {
     initCanvas,
   };
