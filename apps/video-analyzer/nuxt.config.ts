@@ -33,5 +33,8 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt"
   ],
+  plugins: [    
+    { src: "~/plugins/vue-konva.js", mode: 'client' }
+  ],	
   compatibilityDate: '2024-11-20'
 });

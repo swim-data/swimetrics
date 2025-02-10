@@ -1,7 +1,15 @@
 <template>
-  <div ref="canvasContainerRef" class="flex-grow bg-gray-100 w-full relative">
-    <canvas id="editor-canvas" class="absolute top-0 left-0 w-full h-full" />
-    Mouse position is at: {{ x }}, {{ y }}
+  <div class="flex-grow bg-gray-100 w-full relative">
+    <div class="absolute top-0 left-0 w-full h-full">
+      <v-stage :config="configStage">
+        <v-layer>
+          <v-rect :config="configRect" />
+        </v-layer>
+      </v-stage>
+    </div>
+    <div>
+      {{ x }}, {{ y }}
+    </div>
   </div>
 </template>
 
@@ -10,7 +18,6 @@ import { onMounted } from 'vue';
 import useCanvas from '../../composable/useCanvas';
 import { useMouse } from '../../composable/useMouse';
 
-const canvasContainerRef = ref(null);
 const { initCanvas } = useCanvas();
 const { x, y } = useMouse()
 
@@ -19,4 +26,25 @@ onMounted(() => {
   initCanvas();
 });
 
+
+</script>
+<script>
+  export default {
+  data() {
+    return {
+      configStage: {
+        width: 800,
+        height: 600
+      },
+      configRect: {
+        x: 22,
+        y: 22,
+        width: 100,
+        height: 100,
+        fill: 'red',
+        draggable: false
+      }
+    };
+  }
+};
 </script>
