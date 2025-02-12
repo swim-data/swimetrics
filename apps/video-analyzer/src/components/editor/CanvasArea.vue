@@ -39,7 +39,7 @@ onMounted(() => {
       configRect: {
         x: 22,
         y: 22,
-        width: 100,
+        width: 150,
         height: 100,
         fill: 'red',
         draggable: false

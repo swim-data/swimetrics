@@ -34,7 +34,12 @@ export default defineNuxtConfig({
     "@vueuse/nuxt"
   ],
   plugins: [    
-    { src: "~/plugins/vue-konva.js", mode: 'client' }
+    { src: "~/plugins/vue-konva.client.js", mode: 'client' }
   ],	
+  build: {
+        extend(config) {
+            config.resolve.alias['vue'] = 'vue/dist/vue.common'
+        }
+    },
   compatibilityDate: '2024-11-20'
 });
