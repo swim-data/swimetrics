@@ -12,18 +12,17 @@
         ref="fileInput"
         type="file"
         accept="video/*"
-        class="hidden"
+        class=""
         @change="handleVideoUpload"
-      />
+      >
     </div>
-
     <!-- Video Player -->
     <div class="video-container">
+      <CanvasArea class="video-player w-full max-w-4xl" />
       <video
         ref="videoPlayer"
         class="video-player w-full max-w-4xl border border-gray-300"
-        controls
-      ></video>
+      />
     </div>
 
     <!-- Playback Controls -->
@@ -43,7 +42,7 @@
           step="0.1"
           v-model="playbackRate"
           @input="updatePlaybackRate"
-        />
+        >
         <span>{{ playbackRate.toFixed(1) }}x</span>
       </label>
     </div>
@@ -52,6 +51,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import CanvasArea from '../components/editor/CanvasArea.vue'
 
 // Refs for video player and file input
 const videoPlayer = ref<HTMLVideoElement | null>(null);

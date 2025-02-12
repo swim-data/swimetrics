@@ -1,9 +1,8 @@
 <template>
-  <div class="flex-grow bg-gray-100 w-full relative">
+  <div class="flex-grow relative">
     <div class="absolute top-0 left-0 w-full h-full">
       <v-stage 
-        :config="configStage"
-        class="w-full h-full"
+        :config="stageConfig"
         @mousedown="startNewLine"
         @mousemove="updateCurrentLine"
         @mouseup="finishLine"
@@ -37,10 +36,7 @@ onMounted(() => {});
   export default {
   data() {
     return {
-      configStage: {
-        width: 800,
-        height: 600
-      },
+      stageConfig: { width: 200, height: 200 },
       lines: [],
       currentLine: null,
     };
