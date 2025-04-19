@@ -1,0 +1,11 @@
+model File {
+    id           String   @id @default(cuid())
+    fileName     String
+    originalName String
+    mimeType     String
+    size         Int
+    bucket       String
+    bucketPath   String
+    createdAt    DateTime @default(now())
+    updatedAt    DateTime @updatedAt
+}
