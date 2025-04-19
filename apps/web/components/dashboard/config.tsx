@@ -1,4 +1,15 @@
-import {BookOpen, Bot, Frame, LifeBuoy, Map, PieChart, Send, Settings2, SquareTerminal} from "lucide-react";
+import {
+    BookOpen,
+    Bot,
+    Frame,
+    LifeBuoy,
+    Map,
+    PieChart,
+    Send,
+    Settings2,
+    SquareTerminal,
+    Video,
+} from "lucide-react";
 
 export const data = {
     user: {
@@ -7,6 +18,26 @@ export const data = {
         avatar: "/avatars/shadcn.jpg",
     },
     navMain: [
+        {
+            title: "Video",
+            url: "/dashboard/video",
+            icon: Video,
+            isActive: true,
+            items: [
+                {
+                    title: "Upload",
+                    url: "/dashboard/video/upload",
+                },
+                {
+                    title: "Starred",
+                    url: "#",
+                },
+                {
+                    title: "Settings",
+                    url: "#",
+                },
+            ],
+        },
         {
             title: "Playground",
             url: "#",
@@ -122,4 +153,4 @@ export const data = {
             icon: Map,
         },
     ],
-}
+};
