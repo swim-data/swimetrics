@@ -1,0 +1,31 @@
+meta {
+  name: GetFileById
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: http://localhost:3099/graphql
+  body: graphql
+  auth: inherit
+}
+
+body:graphql {
+  query GetFileById($id: String!) {
+    fileById(id: $id) {
+      id
+      originalName
+      mimeType
+      size
+      createdAt
+      bucketPath
+    }
+  }
+  
+}
+
+body:graphql:vars {
+  {
+    "id": "cm9ocic6p00002qjbdza2xlee"
+  }
+}

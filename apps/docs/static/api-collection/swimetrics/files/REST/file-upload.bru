@@ -1,0 +1,15 @@
+meta {
+  name: /file/upload
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3099/file/upload
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  file: @file(/Users/niklaskappler/Downloads/wetransfer_uw-analyse-jenny_2025-04-16_1918/IMG_9603.mov)
+}

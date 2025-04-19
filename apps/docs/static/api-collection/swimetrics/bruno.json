@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "swimetrics",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

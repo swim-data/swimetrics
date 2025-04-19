@@ -1,0 +1,25 @@
+meta {
+  name: GetAllFiles
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: http://localhost:3099/graphql
+  body: graphql
+  auth: inherit
+}
+
+body:graphql {
+  query GetAllFiles {
+    files {
+      id
+      originalName
+      mimeType
+      size
+      createdAt
+      bucketPath
+    }
+  }
+  
+}
