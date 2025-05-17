@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { PrismaService } from './prisma.service';
 import { MinioClientService } from '../minio/minio-client/minio-client.service';
 
@@ -19,6 +19,21 @@ export class FileService {
         return await this.prisma.file.findUnique({
             where: { id: id },
         });
+    }
+
+    async findOneFileUrl(id: string) {
+        const fileDetails = await this.prisma.file.findUnique({
+            where: { id: id },
+        });
+
+        if (!fileDetails) {
+            throw new NotFoundException(`File with ID ${id} not found`);
+        }
+
+        const downloadUrl = await this.minioClientService.getFileUrl(
+            fileDetails.bucketPath,
+        );
+        return downloadUrl;
     }
 
     async uploadFile(file: Express.Multer.File) {

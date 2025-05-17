@@ -1,11 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AppService {
-    constructor(private configService: ConfigService) {}
+    constructor() {}
 
     getHello(): string {
-        return this.configService.get('MINIO_ROOT_PASSWORD') ?? 'Hello World!';
+        return 'Hello World!';
     }
 }

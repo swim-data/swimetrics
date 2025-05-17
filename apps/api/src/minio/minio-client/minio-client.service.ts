@@ -54,4 +54,12 @@ export class MinioClientService {
             throw error;
         }
     }
+
+    async getFileUrl(fileName: string) {
+        return await this.minioClient.presignedUrl(
+            'GET',
+            this.configService.getOrThrow('MINIO_DEFAULT_BUCKET'),
+            fileName,
+        );
+    }
 }

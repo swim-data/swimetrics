@@ -1,4 +1,4 @@
-import { Args, Int, Query, Resolver } from '@nestjs/graphql';
+import { Args, Query, Resolver } from '@nestjs/graphql';
 import { FileService } from './file.service';
 import { Logger } from '@nestjs/common';
 import { File } from './entities/file.entity';
@@ -12,12 +12,16 @@ export class FileResolver {
     @Query(() => [File], { name: 'files' })
     async findAll() {
         const files = await this.fileService.findAll();
-        this.logger.log(files);
         return files;
     }
 
     @Query(() => File, { name: 'fileById' })
     findOne(@Args('id', { type: () => String }) id: string) {
         return this.fileService.findOne(id);
+    }
+
+    @Query(() => String, { name: 'fileUrlById' })
+    findOneFileUrl(@Args('id', { type: () => String }) id: string) {
+        return this.fileService.findOneFileUrl(id);
     }
 }
