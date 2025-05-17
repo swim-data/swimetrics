@@ -1,0 +1,27 @@
+{
+    "name": "ui-graphql",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.ts",
+    "exports": {
+        "./*": "./src/*.ts"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "codegen": "graphql-codegen --config codegen.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@graphql-codegen/cli": "5.0.6",
+        "@graphql-codegen/client-preset": "4.8.1",
+        "@graphql-codegen/introspection": "4.0.3",
+        "@graphql-codegen/typescript": "^4.1.6",
+        "@graphql-codegen/typescript-operations": "^4.6.1"
+    },
+    "dependencies": {
+        "@graphql-typed-document-node/core": "^3.2.0",
+        "graphql": "^16.10.0"
+    }
+}
