@@ -7,10 +7,7 @@ const config: CodegenConfig = {
     generates: {
         "src/": {
             preset: "client",
-            presetConfig: {
-                gqlTagName: "gql",
-            },
-            plugins: [],
+            plugins: ["typescript", "typescript-operations"],
         },
     },
     ignoreNoDocuments: true,

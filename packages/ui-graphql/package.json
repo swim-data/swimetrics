@@ -1,8 +1,7 @@
 {
-    "name": "ui-graphql",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.ts",
+    "name": "@repo/ui-graphql",
+    "version": "0.0.0",
+    "private": true,
     "exports": {
         "./*": "./src/*.ts"
     },
@@ -10,9 +9,6 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "codegen": "graphql-codegen --config codegen.ts"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
     "devDependencies": {
         "@graphql-codegen/cli": "5.0.6",
         "@graphql-codegen/client-preset": "4.8.1",
